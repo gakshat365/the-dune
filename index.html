@@ -44,25 +44,83 @@
             /* Neon blue border */
         }
 
+        body.vaporwave {
+            --background: #330867;  /* Deep purple background */
+            --text: #fcfcfc;  /* Bright white text */
+            --card-bg: linear-gradient(135deg, #30cfd0, #c43ad6);  /* Teal to pink gradient */
+            --accent: var(--user-accent, #ff71ce);  /* Neon pink */
+            --secondary: #01cdfe;  /* Bright cyan */
+            --nav-bg: rgba(51, 8, 103, 0.95);  /* Semi-transparent deep purple */
+            --shadow: 0 8px 20px rgba(255, 113, 206, 0.4);  /* Pink glow shadow */
+            --border: #b967ff;  /* Neon purple */
+            --heading-font: 'Montserrat', sans-serif;
+            --body-font: 'Poppins', sans-serif;
+            
+            /* Add a grid background */
+            background-image: 
+                linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
 
+        body.vaporwave h1, 
+        body.vaporwave h2, 
+        body.vaporwave h3 {
+            font-family: var(--heading-font);
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            text-shadow: 3px 3px 0 #01cdfe, 6px 6px 0 #b967ff;
+            color: #ff71ce;
+        }
 
-        body.lord-of-the-rings {
-            --background: #2f2e24;
-            /* Earthy brown */
-            --text: #e6d9a8;
-            /* Parchment beige */
-            --card-bg: linear-gradient(135deg, #3d422e, #5c6242);
-            /* Forest gradient */
-            --accent: var(--user-accent, #d4a017);
-            /* Gold of the Ring */
-            --secondary: #2e6b34;
-            /* Elvish green */
-            --nav-bg: rgba(61, 66, 46, 0.95);
-            /* Forest shadow */
-            --shadow: 0 8px 20px rgba(212, 160, 23, 0.2);
-            /* Golden glow */
-            --border: #8c7b47;
-            /* Aged bronze */
+        body.vaporwave p, 
+        body.vaporwave li, 
+        body.vaporwave a {
+            font-family: var(--body-font);
+        }
+
+        body.vaporwave #theme-select {
+            color: #ff71ce;  /* Neon pink for vaporwave */
+            font-weight: bold;
+            background: #1a0133; /* Dark purple background for contrast */
+            border-color: #01cdfe; /* Cyan border */
+        }
+
+        body.vaporwave .ring-circle {
+            box-shadow: 0 0 15px rgba(1, 205, 254, 0.6);
+        }
+
+        body.vaporwave section {
+            border-width: 3px;
+            border-style: solid;
+            border-image: linear-gradient(to bottom right, #ff71ce, #01cdfe) 1;
+        }
+
+        body.vaporwave #hero::before {
+            background: linear-gradient(135deg, rgba(51, 8, 103, 0.7), rgba(201, 57, 214, 0.5));
+            backdrop-filter: blur(2px);
+        }
+
+        /* Add a retro horizontal line style for vaporwave theme */
+        body.vaporwave hr {
+            height: 4px;
+            background: linear-gradient(to right, #ff71ce, #01cdfe, #b967ff);
+            border: none;
+            margin: 30px 0;
+        }
+
+        /* Custom scrollbar for vaporwave theme */
+        body.vaporwave::-webkit-scrollbar {
+            width: 12px;
+        }
+
+        body.vaporwave::-webkit-scrollbar-track {
+            background: #330867;
+        }
+
+        body.vaporwave::-webkit-scrollbar-thumb {
+            background: linear-gradient(#ff71ce, #01cdfe);
+            border-radius: 6px;
         }
 
         body.vs-code-light {
@@ -85,6 +143,101 @@
             --nav-bg: rgba(37, 37, 38, 0.95);
             --shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
             --border: #3c3c3c;
+        }
+
+        body.color-blind-friendly {
+            --background: #f8f8f8;
+            --text: #333333;
+            --card-bg: linear-gradient(135deg, #ffffff, #e6e6e6);
+            --accent: var(--user-accent, #0072b2); /* Blue that's distinguishable in most color blindness types */
+            --secondary: #009e73; /* Green visible to most color blind people */
+            --nav-bg: rgba(248, 248, 248, 0.95);
+            --shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            --border: #888888; /* Gray border */
+            --heading-font: 'Montserrat', sans-serif;
+            --body-font: 'Poppins', sans-serif;
+        }
+
+        body.color-blind-friendly h1,
+        body.color-blind-friendly h2,
+        body.color-blind-friendly h3 {
+            font-family: var(--heading-font);
+            font-weight: 600;
+        }
+
+        body.color-blind-friendly #theme-select {
+            color: #0072b2; /* Blue for theme select in color blind mode */
+        }
+
+        body.matrix {
+            --background: #000000;
+            --text: #00ff41; /* Matrix green */
+            --card-bg: linear-gradient(135deg, #0c1f0c, #000000);
+            --accent: var(--user-accent, #00ff41);
+            --secondary: #00aa33;
+            --nav-bg: rgba(0, 15, 0, 0.97);
+            --shadow: 0 8px 20px rgba(0, 255, 65, 0.2);
+            --border: #005522;
+            --heading-font: 'Space Mono', monospace;
+            --body-font: 'Courier New', monospace;
+            
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='1000' opacity='0.2'%3E%3Ctext x='0' y='20' fill='%2300ff41'%3E01101%3C/text%3E%3Ctext x='30' y='40' fill='%2300ff41'%3E10011%3C/text%3E%3Ctext x='10' y='60' fill='%2300ff41'%3E01010%3C/text%3E%3Ctext x='20' y='80' fill='%2300ff41'%3E11001%3C/text%3E%3Ctext x='5' y='100' fill='%2300ff41'%3E10110%3C/svg%3E");
+            background-repeat: repeat;
+        }
+
+        body.matrix h1, 
+        body.matrix h2, 
+        body.matrix h3 {
+            font-family: var(--heading-font);
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            text-shadow: 0 0 5px var(--accent), 0 0 10px var(--accent);
+        }
+
+        body.matrix p, 
+        body.matrix li, 
+        body.matrix a {
+            font-family: var(--body-font);
+        }
+
+        body.matrix #theme-select {
+            color: #00ff41; /* Keep the bright green text */
+            font-family: var(--body-font);
+            background: #0a1a0a; /* Dark green-black background for contrast */
+            border-color: #00aa33; /* Brighter border */
+        }
+
+        body.matrix .timeline::before {
+            box-shadow: 0 0 5px var(--accent);
+        }
+
+        body.matrix .timeline-item::before {
+            box-shadow: 0 0 8px var(--accent);
+        }
+
+        body.matrix #hero::before {
+            background: rgba(0, 0, 0, 0.8);
+        }
+
+        body.matrix .ring-inner {
+            font-family: 'Courier New', monospace;
+            text-shadow: 0 0 5px var(--accent);
+        }
+
+        body.matrix section {
+            border: 1px solid var(--accent);
+            box-shadow: inset 0 0 10px var(--accent);
+        }
+
+        body.matrix #analyze-btn {
+            border: 1px solid var(--accent);
+        }
+
+        body.matrix #text-analysis textarea {
+            color: var(--accent);
+            background-color: rgba(0, 0, 0, 0.7);
+            caret-color: var(--accent);
+            font-family: 'Courier New', monospace;
         }
 
         body {
@@ -690,6 +843,58 @@
                 padding: 10px;
             }
         }
+
+        /* Custom backgrounds for theme selector in all themes */
+
+        /* Default (dune-light) theme */
+        #theme-select {
+            background: #e6d7be;
+            border-color: #c9ad85;
+        }
+
+        /* Cyberpunk theme */
+        body.cyberpunk #theme-select {
+            color: #00ffcc;
+            background: #141f27;
+            border-color: #00ccff;
+        }
+
+        /* VS Code Light theme */
+        body.vs-code-light #theme-select {
+            color: #007ACC;
+            background: #f5f5f5;
+            border-color: #007ACC;
+        }
+
+        /* VS Code Dark theme */
+        body.vs-code-dark #theme-select {
+            color: #569CD6;
+            background: #252526;
+            border-color: #3c3c3c;
+        }
+
+        /* Color Blind Friendly theme */
+        body.color-blind-friendly #theme-select {
+            color: #0072b2;
+            background: #f0f0f0;
+            border-color: #009e73;
+        }
+
+        /* Matrix theme - already implemented */
+        body.matrix #theme-select {
+            color: #00ff41;
+            font-family: var(--body-font);
+            background: #0a1a0a;
+            border-color: #00aa33;
+        }
+
+        /* Vaporwave theme - already implemented */
+        body.vaporwave #theme-select {
+            color: #ff71ce;
+            font-weight: bold;
+            background: #1a0133;
+            border-color: #01cdfe;
+        }
     </style>
 </head>
 
@@ -709,25 +914,32 @@
         <div class="theme-selector">
             <h3>Theme Selector</h3>
             <select id="theme-select">
-                <option value="dune-light">Dune Light</option>
                 <option value="cyberpunk">Cyberpunk</option>
-                <option value="lord-of-the-rings">Lord of the Rings</option>
-                <option value="vs-code-light">VS Code Light</option>
-                <option value="vs-code-dark">VS Code Dark</option>
+                <option value="dune-light">Sand-Dunes</option>
+                <!-- <option value="lord-of-the-rings">Lord of the Rings</option> -->
+                <option value="vs-code-light">Cool-Breeze</option>
+                <option value="vs-code-dark">Obsidian-Black</option>
+                <option value="color-blind-friendly">Color Blind Friendly</option>
+                <option value="matrix">Matrix</option>
+                <option value="vaporwave">Vaporwave</option>
             </select>
         </div>
     </nav>
 
+    <!-- Update the color picker container with a reset button -->
     <div class="color-picker-container">
         <label for="color-picker" class="color-picker-label">Accent Color</label>
-        <input type="color" id="color-picker" value="#e07b39">
+        <div class="color-picker-controls">
+            <input type="color" id="color-picker" value="#e07b39">
+            <button id="reset-accent" title="Reset to theme default">Reset</button>
+        </div>
     </div>
 
     <div id="progress-bar"></div>
 
     <main>
         <section id="hero">
-            <div class="hero-content">
+            <div class="hero-content" style="display: flex; flex-direction: column; align-items: center; justify-content: flex-start; padding-top: 15vh;">
                 <h1 style="color: #000000;">Akshat Gupta</h1>
                 <h2 style="color: #000000;">A visionary crafting legacies in code and sand, destined to conquer the
                     dunes of innovation.</h2>
@@ -823,7 +1035,10 @@
             'cyberpunk': '#00ffcc', // Neon cyan for Cyberpunk
             'lord-of-the-rings': '#d4a017', // Gold for Lord of the Rings
             'vs-code-light': '#007ACC',
-            'vs-code-dark': '#569CD6'
+            'vs-code-dark': '#569CD6',
+            'color-blind-friendly': '#0072b2', // Blue that works for color blind users
+            'matrix': '#00ff41', // Matrix green
+            'vaporwave': '#ff71ce' // Neon pink for Vaporwave
         };
 
         function trackEvents() {
@@ -969,7 +1184,7 @@
         });
 
         document.addEventListener('DOMContentLoaded', () => {
-            const savedTheme = localStorage.getItem('theme') || 'dune-light';
+            const savedTheme = localStorage.getItem('theme') || 'cyberpunk';
             const savedAccent = localStorage.getItem('userAccent');
 
             document.body.classList.add(savedTheme);
@@ -1007,6 +1222,23 @@
         
         rings.forEach(ring => ringObserver.observe(ring));
 
+        // Add this code to your script section to fix the reset button functionality
+        const resetAccentBtn = document.getElementById('reset-accent');
+        resetAccentBtn.addEventListener('click', () => {
+            const currentTheme = themeSelect.value;
+            const defaultColor = themeDefaults[currentTheme];
+            
+            // Reset to theme default
+            document.documentElement.style.setProperty('--user-accent', defaultColor);
+            colorPicker.value = defaultColor;
+            
+            // Update buttons
+            accentBtn.style.backgroundColor = defaultColor;
+            document.getElementById('menu-toggle').style.backgroundColor = defaultColor;
+            
+            // Remove stored user accent
+            localStorage.removeItem('userAccent');
+        });
 
         trackEvents();
         document.getElementById('analyze-btn').addEventListener('click', analyzeText);
