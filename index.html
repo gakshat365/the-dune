@@ -895,38 +895,6 @@
             background: #1a0133;
             border-color: #01cdfe;
         }
-
-        /* Add these styles to ensure color picker and reset button appear properly */
-        .color-picker-controls {
-            display: flex;
-            gap: 8px;
-            align-items: center;
-            width: 100%;
-        }
-
-        .color-picker-controls input {
-            flex: 1;
-            height: 40px;
-            cursor: pointer;
-            border: 2px solid var(--border);
-            border-radius: 4px;
-        }
-
-        #reset-accent {
-            padding: 8px 12px;
-            background: var(--card-bg);
-            color: var(--text);
-            border: 2px solid var(--border);
-            border-radius: 4px;
-            cursor: pointer;
-            font-weight: bold;
-            transition: all 0.3s ease;
-        }
-
-        #reset-accent:hover {
-            background: var(--accent);
-            color: #fff;
-        }
     </style>
 </head>
 
@@ -958,7 +926,7 @@
         </div>
     </nav>
 
-    <!-- Ensure this HTML structure is intact and matches the JavaScript references -->
+    <!-- Update the color picker container with a reset button -->
     <div class="color-picker-container">
         <label for="color-picker" class="color-picker-label">Accent Color</label>
         <div class="color-picker-controls">
@@ -1274,96 +1242,6 @@
 
         trackEvents();
         document.getElementById('analyze-btn').addEventListener('click', analyzeText);
-
-        // Ensure elements are properly referenced before accessing them
-        document.addEventListener('DOMContentLoaded', () => {
-            const sidebar = document.getElementById('sidebar');
-            const menuToggle = document.getElementById('menu-toggle');
-            const main = document.querySelector('main');
-            const themeSelect = document.getElementById('theme-select');
-            const colorPicker = document.getElementById('color-picker');
-            const accentBtn = document.getElementById('accent-btn');
-            const resetAccentBtn = document.getElementById('reset-accent');
-            const colorPickerContainer = document.querySelector('.color-picker-container');
-            
-            const savedTheme = localStorage.getItem('theme') || 'cyberpunk';
-            const savedAccent = localStorage.getItem('userAccent');
-        
-            // Apply saved or default theme
-            document.body.classList.add(savedTheme);
-            themeSelect.value = savedTheme;
-        
-            // Apply saved or default accent color
-            if (savedAccent) {
-                document.documentElement.style.setProperty('--user-accent', savedAccent);
-                colorPicker.value = savedAccent;
-            } else {
-                const defaultColor = themeDefaults[savedTheme];
-                document.documentElement.style.setProperty('--user-accent', defaultColor);
-                colorPicker.value = defaultColor;
-            }
-        
-            // Update UI elements
-            const accentColor = getComputedStyle(document.documentElement)
-                .getPropertyValue('--accent').trim();
-            menuToggle.style.backgroundColor = accentColor;
-            accentBtn.style.backgroundColor = accentColor;
-        
-            // Initially hide color picker
-            colorPickerContainer.style.display = 'none';
-            
-            // Add event listeners after elements are properly initialized
-            menuToggle.addEventListener('click', () => {
-                sidebar.classList.toggle('active');
-                main.classList.toggle('shifted');
-            });
-            
-            accentBtn.addEventListener('click', () => {
-                colorPickerContainer.style.display = 
-                    colorPickerContainer.style.display === 'none' ? 'block' : 'none';
-            });
-            
-            colorPicker.addEventListener('input', (e) => {
-                const newColor = e.target.value;
-                document.documentElement.style.setProperty('--user-accent', newColor);
-                localStorage.setItem('userAccent', newColor);
-                accentBtn.style.backgroundColor = newColor;
-                menuToggle.style.backgroundColor = newColor;
-            });
-            
-            resetAccentBtn.addEventListener('click', () => {
-                const currentTheme = themeSelect.value;
-                const defaultColor = themeDefaults[currentTheme];
-                
-                document.documentElement.style.setProperty('--user-accent', defaultColor);
-                colorPicker.value = defaultColor;
-                accentBtn.style.backgroundColor = defaultColor;
-                menuToggle.style.backgroundColor = defaultColor;
-                localStorage.removeItem('userAccent');
-            });
-            
-            themeSelect.addEventListener('change', () => {
-                const selectedTheme = themeSelect.value;
-                document.body.className = '';
-                document.body.classList.add(selectedTheme);
-                localStorage.setItem('theme', selectedTheme);
-                
-                if (!localStorage.getItem('userAccent')) {
-                    const defaultColor = themeDefaults[selectedTheme];
-                    document.documentElement.style.setProperty('--user-accent', defaultColor);
-                    colorPicker.value = defaultColor;
-                }
-                
-                const accentColor = getComputedStyle(document.documentElement)
-                    .getPropertyValue('--accent').trim();
-                menuToggle.style.backgroundColor = accentColor;
-                accentBtn.style.backgroundColor = accentColor;
-            });
-            
-            // Initialize other functionality after DOM is loaded
-            trackEvents();
-            document.getElementById('analyze-btn').addEventListener('click', analyzeText);
-        });
     </script>
 </body>
 
